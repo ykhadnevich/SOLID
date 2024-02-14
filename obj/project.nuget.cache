@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "9fst0S8KIRlhgCEGx+KjmUsobCQb3R2GNbVovCYbQf93NGxLmWunJhMiDBdbPp9GE4zn2Xei6hkpwjE0Ddl8LQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\RiderProjects\\FolderCreation\\FolderCreation\\FolderCreation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\nuget.commandline\\6.8.0\\nuget.commandline.6.8.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.commandline\\2.0.0-beta4.22272.1\\system.commandline.2.0.0-beta4.22272.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.commandline.namingconventionbinder\\2.0.0-beta4.22272.1\\system.commandline.namingconventionbinder.2.0.0-beta4.22272.1.nupkg.sha512"
+  ],
+  "logs": []
+}
