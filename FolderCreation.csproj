@@ -8,6 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="CsvHelper" Version="31.0.0" />
+      <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.16-beta1" />
       <PackageReference Include="NuGet.CommandLine" Version="6.8.0">
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

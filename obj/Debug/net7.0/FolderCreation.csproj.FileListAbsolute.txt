@@ -29,3 +29,7 @@ C:\Users\user\RiderProjects\FolderCreation\FolderCreation\bin\Debug\net7.0\tr\Sy
 C:\Users\user\RiderProjects\FolderCreation\FolderCreation\bin\Debug\net7.0\zh-Hans\System.CommandLine.resources.dll
 C:\Users\user\RiderProjects\FolderCreation\FolderCreation\bin\Debug\net7.0\zh-Hant\System.CommandLine.resources.dll
 C:\Users\user\RiderProjects\FolderCreation\FolderCreation\obj\Debug\net7.0\FolderCreation.csproj.CopyComplete
+C:\Users\user\RiderProjects\FolderCreation\FolderCreation\bin\Debug\net7.0\CsvHelper.dll
+C:\Users\user\RiderProjects\FolderCreation\FolderCreation\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\user\RiderProjects\FolderCreation\FolderCreation\bin\Debug\net7.0\Newtonsoft.Json.Schema.dll
+C:\Users\user\RiderProjects\FolderCreation\FolderCreation\bin\Debug\net7.0\System.Linq.Async.dll
