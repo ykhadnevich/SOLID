@@ -8,10 +8,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        var logFilePath = "path_to_your_log_file.json"; 
         var userManager = new UserManager();
         var fileManager = new FileManager(userManager);
         var planManager = new PlanManager();
         var logger = new Logger();
+        
+        
 
         var loginCommand = new Command("login", "Login with a username")
         {
@@ -38,7 +41,17 @@ class Program
         var listFilesCommand = new Command("list", "List files in the user's folder");
         var listFoldersCommand = new Command("list-folders", "List folders in the user's folder");
         var logoutCommand = new Command("logout", "Logout from the current user session");
+        
+        var optionsCommand = new Command("options", "Show available actions for a file")
+        {
+            new Argument<string>("shortcut", "The file shortcut")
+        };
 
+        var actionCommand = new Command("action", "Invoke an action on a file")
+        {
+            new Argument<string>("actionName", "The action name"),
+            new Argument<string>("shortcut", "The file shortcut")
+        };
 
         var rootCommand = new RootCommand
         {
@@ -48,7 +61,9 @@ class Program
             removeFileCommand,
             changePlanCommand,
             listFilesCommand,
-            listFoldersCommand
+            listFoldersCommand,
+            optionsCommand,
+            actionCommand
         };
         
         
@@ -57,9 +72,21 @@ class Program
         logoutCommand.Handler = CommandHandler.Create(() => userManager.Logout());
         addFileCommand.Handler = CommandHandler.Create<string, string>((filename, shortcut) => fileManager.AddFile(filename, shortcut));
         removeFileCommand.Handler = CommandHandler.Create<string>((shortcut) => fileManager.RemoveFile(shortcut));
-        changePlanCommand.Handler = CommandHandler.Create<string>((planName) => planManager.ChangePlan(planName));
+        changePlanCommand.Handler = CommandHandler.Create<string>((planName) => userManager.ChangePlan(planName));
         listFilesCommand.Handler = CommandHandler.Create(() => fileManager.ListFiles());
-        listFoldersCommand.Handler = CommandHandler.Create(() => fileManager.ListFolders()); // Set handler for list-folders command
+        /*listFoldersCommand.Handler = CommandHandler.Create(() => fileManager.ListFolders()); // Set handler for list-folders command*/
+        optionsCommand.Handler = CommandHandler.Create<string>((shortcut) => ShowOptions(fileManager, shortcut));
+        actionCommand.Handler = CommandHandler.Create<string, string>((actionName, shortcut) => InvokeAction(fileManager, actionName, shortcut));
+        
         rootCommand.Invoke(args);
+    }
+    static void ShowOptions(FileManager fileManager, string shortcut)
+    {
+        fileManager.ShowOptions(shortcut);
+    }
+
+    static void InvokeAction(FileManager fileManager, string actionName, string shortcut)
+    {
+        fileManager.InvokeAction(actionName, shortcut);
     }
 }
